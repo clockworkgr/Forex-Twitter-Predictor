@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="el_GR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forex Predictor Demo</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg=="
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="realTime" id="realTime">
+  </div>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-right">
+          <h2>Forex Predictor Demo App</h2>
+          <h4>Predict future forex behaviour via the power of Twitter!</h4>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="main">
+    <div class="container">
+      <div class="row" id="charts">
+      </div>
+      <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4 text-center">
+          <h4>Add a new chart</h4>
+          <form name="setup-chart" onsubmit="return false;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6 text-right">
+                  <label for="currencypair">Select Currency Pair:</label>
+                </div>
+                <div class="col-xs-6 text-left">
+                  <select name="currencypair" id="currencypair" class="input">
+                    <option value="0">...</option>
+                    <option value="EUR_USD">EUR/USD</option>
+                    <option value="EUR_CHF">EUR/CHF</option>
+                    <option value="USD_CHF">USD/CHF</option>
+                    <option value="USD_AUD">USD/AUD</option>
+                    <option value="USD_CAD">USD/CAD</option>
+                    <option value="EUR_GBP">EUR/GBP</option>
+                    <option value="USD_GBP">USD/GBP</option>
+                  </select>
+                  <div class="errormsg">Please select a currency pair</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6 text-right">
+                  <label for="keyword">Keyword to track:</label>
+                </div>
+                <div class="col-xs-6 text-left">
+                  <input name="keyword" id="keyword" type="text" class="input" />
+                  <div class="errormsg">Please enter a keyword to track on twitter</div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12 text-center">
+                  <a class="goBtn" href="javascript:void(0)" onclick="setupChart();">
+                    Train & Predict
+                  </a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-4"></div>
+      </div>
+    </div>
+    <div id="chart"></div>
+  </section>
+  <footer>
+    <div class="container-fluid" id="bottomline">
+      <div class="col-xs-12 text-center">
+        Copyright 2016
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="http://d3js.org/d3.v2.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>

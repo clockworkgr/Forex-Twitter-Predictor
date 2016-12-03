@@ -1,0 +1,84 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    h1,h2,h3,h4,h5,h6 {
+        font-family: 'Roboto Slab', serif;
+    }
+    .chartHolder {
+        position:relative;
+        padding-bottom:30%;
+        height:0;
+        .chart,.loader {
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            font-size:10px;
+        }
+        .loader {
+            width:100px;
+            margin:auto;
+        }
+        &.loaded {
+            .loader {
+                display:none;
+            }
+        }
+    }
+    form {
+        label {                
+            margin-top:0.5em;
+            padding:0.5em;
+            margin-bottom:0;
+            font-size: 14px;
+        }
+    }
+    .goBtn {
+        display:inline-block;
+        margin-top:1em;
+        margin-bottom:1em;
+        padding:0.5em;
+        background: teal;
+        color:white;
+        font-size: 14px;
+        font-weight:600;
+        font-family: 'Roboto Slab', serif;
+        border-radius:0.3em;
+        &:hover {
+            text-decoration:none;
+        }
+    }
+    .input {
+        margin-top:0.5em;
+        vertical-align:middle;
+        background:none;
+        width:100%;
+        border:1px solid black;
+        padding:0.5em;
+        border-radius:0.3em;
+        color: teal;
+    }
+    .errormsg {
+        color:red;
+        display:none;
+        font-size:10px;
+    }
+    .error {
+         .input {
+            border: 1px solid red;
+         }
+         .errormsg{
+            display:block;
+        }
+    } 
+    .realTime {
+        position:fixed;
+        left:0;
+        top:0;
+        background:rgba(220,25,73,0.3);
+        width:220px;
+        font-size:11px;
+        color:white;
+        font-weight:500;
+    }
+}
